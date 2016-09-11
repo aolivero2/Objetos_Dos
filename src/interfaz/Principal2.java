@@ -22,6 +22,7 @@ public class Principal2 extends javax.swing.JFrame {
         initComponents();
         cmdCalcular.setEnabled(true);
         cmdLimpiar.setEnabled(false);
+        cmdFraccion.setEnabled (false);
     }
 
     /**
@@ -61,7 +62,7 @@ public class Principal2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(216, 192, 228));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
@@ -86,6 +87,7 @@ public class Principal2 extends javax.swing.JFrame {
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 60, 10));
         jPanel1.add(txtDenominador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 50, 30));
 
+        cmbOperacion.setBackground(new java.awt.Color(255, 153, 153));
         cmbOperacion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         cmbOperacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "   Suma", "   Resta", "   Multiplicación", "   División", "   " }));
         jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 100, 30));
@@ -127,7 +129,7 @@ public class Principal2 extends javax.swing.JFrame {
         });
         jPanel1.add(txtNumMixto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 40, 30));
 
-        cmdCalcular.setBackground(new java.awt.Color(255, 0, 102));
+        cmdCalcular.setBackground(new java.awt.Color(255, 153, 153));
         cmdCalcular.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cmdCalcular.setText("Calcular");
         cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -137,7 +139,7 @@ public class Principal2 extends javax.swing.JFrame {
         });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 80, 30));
 
-        cmdLimpiar.setBackground(new java.awt.Color(255, 51, 102));
+        cmdLimpiar.setBackground(new java.awt.Color(255, 153, 153));
         cmdLimpiar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cmdLimpiar.setText("Limpiar");
         cmdLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +149,7 @@ public class Principal2 extends javax.swing.JFrame {
         });
         jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 80, 30));
 
-        cmdFraccion.setBackground(new java.awt.Color(255, 51, 102));
+        cmdFraccion.setBackground(new java.awt.Color(255, 153, 153));
         cmdFraccion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cmdFraccion.setText("Convertir a Fracción");
         cmdFraccion.addActionListener(new java.awt.event.ActionListener() {
@@ -306,7 +308,7 @@ public class Principal2 extends javax.swing.JFrame {
             
             cmdCalcular.setEnabled(false);
             cmdLimpiar.setEnabled(true);
-          
+            cmdFraccion.setEnabled (true);
         }catch (DenomCeroException e){
            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -318,17 +320,20 @@ public class Principal2 extends javax.swing.JFrame {
         txtDenominador1.setText("");
         txtDenominador2.setText("");
         txtDenominador3.setText("");
+        txtDenominador4.setText("");
         txtNumMixto1.setText("");
         txtNumMixto2.setText("");
         txtNumMixto3.setText("");
         txtNumerador1.setText("");
         txtNumerador2.setText("");
+        txtNumerador3.setText("");
         txtNumerador4.setText("");
         txtNumerador1.requestFocusInWindow();
         cmbOperacion.setSelectedIndex(0);
         
         cmdCalcular.setEnabled(true);
         cmdLimpiar.setEnabled(false);
+        cmdFraccion.setEnabled(false);
                 
         
     }//GEN-LAST:event_cmdLimpiarActionPerformed
@@ -347,6 +352,10 @@ public class Principal2 extends javax.swing.JFrame {
        txtNumerador4.setText(n);
        d=String.valueOf(df);
        txtDenominador4.setText(d);
+       
+       cmdCalcular.setEnabled(false);
+       cmdLimpiar.setEnabled(true); 
+       cmdFraccion.setEnabled(false);
        
         
     }//GEN-LAST:event_cmdFraccionActionPerformed

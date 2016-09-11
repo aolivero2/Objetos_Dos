@@ -108,14 +108,4 @@ public class NumeroMixto {
         f = new NumeroMixto (denmres,numres,nm);
         return f;
     }
-    public NumeroMixto convertirfraccion () throws DenomCeroException{
-       NumeroMixto f;
-       int num,denm,nm;
-       num=this.numeromixto*this.denominador+this.numerador;
-       denm=this.denominador;
-       nm=this.numeromixto;
-       f = new NumeroMixto (num,denm,nm);
-       return f;
-    }
-   
 }
